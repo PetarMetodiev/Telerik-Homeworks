@@ -1,0 +1,9 @@
+Version Information, Came to mess up things
+.NET Framework
+Supported in: 4.5, 4, 3.5, 3.0, 2.0, 1.1, 1.0, added some text
+.NET Framework Client Profile
+Supported in: 4, 3.5 SP1
+Portable Class Library, I was here
+Supported in: Portable Class Library
+.NET for Windows Store apps
+Supported in: Windows 8

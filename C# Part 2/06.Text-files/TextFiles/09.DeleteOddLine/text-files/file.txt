@@ -1,0 +1,9 @@
+The name "C sharp" was inspired by musical notation where a sharp indicates that the written 
+This is similar to the language name of C++, where "++" indicates that a variable should be 
+(in a two-by-two grid), further implying that the language is an increment of C++.
+fact that the sharp symbol (U+266F ? music sharp sign (HTML: &#9839;)) is not present on the 
+the sharp symbol in the written name of the programming language.[7] This convention is reflected 
+(for example, in advertising or in box art[8]), Microsoft uses the intended musical symbol.
+existing languages, including J# (a .NET language also designed by Microsoft that is 
+The original implementation of Eiffel for .NET was called Eiffel#,[10] a name retired 
+such as Gtk# (a .NET wrapper for GTK+ and other GNOME libraries), Cocoa# (a wrapper for Cocoa).

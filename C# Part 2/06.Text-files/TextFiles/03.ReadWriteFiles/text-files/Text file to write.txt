@@ -1,0 +1,9 @@
+Line 1: Version Information
+Line 2: .NET Framework
+Line 3: Supported in: 4.5, 4, 3.5, 3.0, 2.0, 1.1, 1.0
+Line 4: .NET Framework Client Profile
+Line 5: Supported in: 4, 3.5 SP1
+Line 6: Portable Class Library
+Line 7: Supported in: Portable Class Library
+Line 8: .NET for Windows Store apps
+Line 9: Supported in: Windows 8
