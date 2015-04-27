@@ -1,0 +1,52 @@
+body {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+table {
+    background-color: #595959;
+    font-family: Calibri, serif;
+    border: 0px;
+    width: 300px;
+    height: 200px;
+    border-collapse: collapse;
+
+}
+thead > tr > th {
+    color: #97AAAF;
+    text-align: left;
+    font-weight: normal;
+    vertical-align: text-top;
+    font-size: 1.5em;
+}
+.label {
+    color: white;
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: top;
+}
+.yellow{
+	color: #FFF2B2;
+}
+.red{
+	color: red;
+}
+.orange{
+	color: #BF6A1F;
+}
+.grey{
+	color: #87A7AA;
+}
+#circle {
+    width: 10px;
+    height: 10px;
+    background-color: #71b37a;
+    border-radius: 5px;
+    display: inline-block;
+}
+#colorblind{
+	font-weight: bolder;
+	font-size: 2em;
+	text-indent: 50px;
+}
