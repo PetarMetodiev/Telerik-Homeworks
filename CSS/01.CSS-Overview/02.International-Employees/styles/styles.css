@@ -1,6 +1,49 @@
-table{
-	border: 0px;
+#colorblind{
+    font-weight: bolder;
+    font-size: 2em;
+    text-indent: 50px;
 }
-.col-head{
-
+body {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Calibri, serif;
+}
+table td, table th {
+    border: 1px solid #c2c2c2;
+}
+table tr:first-child th {
+    border-top: 0;
+}
+table tr:last-child td {
+    border-bottom: 0;
+}
+table tr td:first-child, table tr th:first-child {
+    border-left: 0;
+}
+table tr td:last-child, table tr th:last-child {
+    border-right: 0;
+}
+td, th {
+    padding: 5px;
+}
+th {
+    background-color: #55b706;
+    color: #fff;
+}
+tbody tr:nth-child(even) {
+    background-color: #ebebd7;
+}
+.germany:before {
+    content: url("http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/Germany-Flag-icon.png");
+}
+.mexico:before {
+    content: url("http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/Mexico-Flag-icon.png");
+}
+.uk:before {
+    content: url("http://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/16/United-Kingdom-flag-icon.png");
 }
