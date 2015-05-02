@@ -1,0 +1,19 @@
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 0;
+	font-size: 18px;
+	font-family: Consolas;
+}
+p{
+	color: #0094ff;
+}
+p:first-line{
+	line-height: 3rem;
+	font-size: 2rem;
+	font-weight: bold;
+}
+p:first-letter{
+	font-size: 3rem;
+	font-family: 'Dancing Script';
+}
