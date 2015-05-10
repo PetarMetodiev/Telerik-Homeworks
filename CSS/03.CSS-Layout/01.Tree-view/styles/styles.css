@@ -1,0 +1,21 @@
+ul li
+{
+    list-style-type: none;
+}
+
+ul li:hover
+{
+    color: #f00;
+}
+
+ul li > ul
+{
+    display: none;
+}
+
+ul li:hover > ul
+{
+    display: block;
+    position: relative;
+    left: -10px;
+}
