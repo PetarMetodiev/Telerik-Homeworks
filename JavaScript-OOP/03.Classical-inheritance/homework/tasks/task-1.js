@@ -17,14 +17,41 @@
 */
 function solve() {
 	var Person = (function() {
-		// var fullname;
 		function Person(firstName, lastName, age) {
-			validateNames(firstName, lastName);
-			validateAge(age);
 			this.firstname = firstName;
 			this.lastname = lastName;
 			this.age = +age;
 		}
+
+		Object.defineProperty(Person.prototype, 'firstname', {
+			get: function() {
+				return this._firstname;
+			},
+			set: function(value) {
+				validateNames(value);
+				this._firstname = value;
+			}
+		});
+
+		Object.defineProperty(Person.prototype, 'lastname', {
+			get: function() {
+				return this._lastname;
+			},
+			set: function(value) {
+				validateNames(value);
+				this._lastname = value;
+			}
+		});
+
+		Object.defineProperty(Person.prototype, 'age', {
+			get: function() {
+				return this._age;
+			},
+			set: function(value) {
+				validateAge(value);
+				this._age = +value;
+			}
+		});
 
 		Object.defineProperty(Person.prototype, 'fullname', {
 			get: function() {
