@@ -1,0 +1,307 @@
+
+> test-driven-hw-mocha@1.0.0 test D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework
+> mocha -R spec tests
+
+
+
+  Tests for "Task 1"
+    Test for exist correct type 
+      √ expect domElement to be an object
+      √ expect domElement.init to be a function
+      √ expect domElement.appendChild to be a function
+      √ expect domElement.addAttribute to be a function
+      √ expect domElement.removeAttribute to be a function
+    Sanity checks
+      √ expect domElement with empty type to throw
+      √ expect domElement with type not a string to throw
+      √ expect domElement with type containing bad characters to throw
+      √ expect domElement with valid type not to throw
+      √ expect adding attribute with empty name to throw
+      √ expect adding attribute with name containing bad characters to throw
+      √ expect adding attribute with valid name not to throw
+      √ expect removing non-existent attribute to throw
+      √ expect removing non-existent attribute to throw
+      √ expect removing existent attribute not to throw
+    Adding attributes
+      1) expect empty domElement to generate correct HTML
+      2) expect domElement with a single attribute to generate correct HTML
+      3) expect attribute value to be in double quotes when it is a number
+      4) expect domElement with attributes to generate HTML with the attributes in correct order
+      5) expect repeating attribute name to hold only the last value
+    Parent control
+      6) expect children to know their parents (one parent, one child)
+      7) expect children to know their parents (one parent, two children)
+      8) expect children to know their parents (grandparent, parent and child)
+    Adding children
+      9) expect correct HTML when child is a string
+      10) expect correct HTML with nested domElements (one parent, one child)
+      11) expect correct HTML with nested domElements (one parent, two children)
+      12) expect correct HTML with nested domElements (grandparent, parent and child)
+      13) expect correct HTML when adding content
+      14) expect string children to override parent's content
+      15) expect domElement children to override parent's content
+      16) expect correct HTML when having both string and domElement children
+      17) expect correct HTML, when there are attributes with same names, but in different domElements
+    Removing attributes
+      18) expect removing an attribute to work (removing the only attribute)
+      19) expect removing an attribute to work (removing one of the attributes)
+      20) expect removing an attribute to work (removing attribute that was added twice)
+      21) expect removing an attribute to work (removing an attribute and then adding it again)
+      22) expect removing an attribute to work (nested domElements)
+      23) expect removing an attribute to work (nested domElements)
+      24) expect removing an attribute to work (nested domElements)
+    Mixing it all together
+      25) expect the example test given in the description to work
+      26) expect this big test to work (no removeAttribute)
+      27) expect this big test to work
+
+
+  15 passing (31ms)
+  27 failing
+
+  1) Tests for "Task 1" Adding attributes expect empty domElement to generate correct HTML:
+
+      AssertionError: expected '<html data-spam="mnogo spam" rowsomething="has a value"></html>' to deeply equal '<html></html>'
+      + expected - actual
+
+      -<html data-spam="mnogo spam" rowsomething="has a value"></html>
+      +<html></html>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:108:30)
+
+  2) Tests for "Task 1" Adding attributes expect domElement with a single attribute to generate correct HTML:
+
+      AssertionError: expected '<div data-spam="mnogo spam" rowsomething="has a value" data-id="myid"></div>' to deeply equal '<div data-id="myid"></div>'
+      + expected - actual
+
+      -<div data-spam="mnogo spam" rowsomething="has a value" data-id="myid"></div>
+      +<div data-id="myid"></div>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:116:30)
+
+  3) Tests for "Task 1" Adding attributes expect attribute value to be in double quotes when it is a number:
+
+      AssertionError: expected '<whateverTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42"></whateverTag>' to deeply equal '<whateverTag something="42"></whateverTag>'
+      + expected - actual
+
+      -<whateverTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42"></whateverTag>
+      +<whateverTag something="42"></whateverTag>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:122:30)
+
+  4) Tests for "Task 1" Adding attributes expect domElement with attributes to generate HTML with the attributes in correct order:
+
+      AssertionError: expected '<NqmaTakufTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value"></NqmaTakufTag>' to deeply equal '<NqmaTakufTag abc="other value" xyz="some value" zzz=""></NqmaTakufTag>'
+      + expected - actual
+
+      -<NqmaTakufTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value"></NqmaTakufTag>
+      +<NqmaTakufTag abc="other value" xyz="some value" zzz=""></NqmaTakufTag>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:130:30)
+
+  5) Tests for "Task 1" Adding attributes expect repeating attribute name to hold only the last value:
+
+      AssertionError: expected '<theGuiltyTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></theGuiltyTag>' to deeply equal '<theGuiltyTag adata="me" bdata="see"></theGuiltyTag>'
+      + expected - actual
+
+      -<theGuiltyTag data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></theGuiltyTag>
+      +<theGuiltyTag adata="me" bdata="see"></theGuiltyTag>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:139:30)
+
+  6) Tests for "Task 1" Parent control expect children to know their parents (one parent, one child):
+     AssertionError: expected undefined to equal { Object (_type) }
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:151:28)
+
+  7) Tests for "Task 1" Parent control expect children to know their parents (one parent, two children):
+     AssertionError: expected undefined to equal { Object (_type) }
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:160:29)
+
+  8) Tests for "Task 1" Parent control expect children to know their parents (grandparent, parent and child):
+     AssertionError: expected undefined to equal { Object (_type) }
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:171:28)
+
+  9) Tests for "Task 1" Adding children expect correct HTML when child is a string:
+
+      AssertionError: expected '<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>' to deeply equal '<p>Some text here, doesn\'t really matter that much what it is.</p>'
+      + expected - actual
+
+      -<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>
+      +<p>Some text here, doesn't really matter that much what it is.</p>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:182:30)
+
+  10) Tests for "Task 1" Adding children expect correct HTML with nested domElements (one parent, one child):
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>' to deeply equal '<parent><child></child></parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>
+      +<parent><child></child></parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:191:32)
+
+  11) Tests for "Task 1" Adding children expect correct HTML with nested domElements (one parent, two children):
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>' to deeply equal '<parent><childy></childy><childx></childx></parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>
+      +<parent><childy></childy><childx></childx></parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:200:32)
+
+  12) Tests for "Task 1" Adding children expect correct HTML with nested domElements (grandparent, parent and child):
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>' to deeply equal '<parent><middleBlq><child></child></middleBlq></parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>
+      +<parent><middleBlq><child></child></middleBlq></parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:210:32)
+
+  13) Tests for "Task 1" Adding children expect correct HTML when adding content:
+
+      AssertionError: expected '<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>' to deeply equal '<p>Some text here, doesn\'t really matter that much what it is.</p>'
+      + expected - actual
+
+      -<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>
+      +<p>Some text here, doesn't really matter that much what it is.</p>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:217:30)
+
+  14) Tests for "Task 1" Adding children expect string children to override parent's content:
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>' to deeply equal '<parent>see me</parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>
+      +<parent>see me</parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:225:32)
+
+  15) Tests for "Task 1" Adding children expect domElement children to override parent's content:
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>' to deeply equal '<parent><child>see me</child></parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></parent>
+      +<parent><child>see me</child></parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:235:32)
+
+  16) Tests for "Task 1" Adding children expect correct HTML when having both string and domElement children:
+
+      AssertionError: expected '<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>' to deeply equal '<p>the text you SEE!<b></b>the text you SEE!<s></s>the text you SEE!</p>'
+      + expected - actual
+
+      -<p data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me"></p>
+      +<p>the text you SEE!<b></b>the text you SEE!<s></s>the text you SEE!</p>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:248:30)
+
+  17) Tests for "Task 1" Adding children expect correct HTML, when there are attributes with same names, but in different domElements:
+
+      AssertionError: expected '<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid"></parent>' to deeply equal '<parent id="pid"><child id="cid"></child></parent>'
+      + expected - actual
+
+      -<parent data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid"></parent>
+      +<parent id="pid"><child id="cid"></child></parent>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:259:33)
+
+  18) Tests for "Task 1" Removing attributes expect removing an attribute to work (removing the only attribute):
+
+      AssertionError: expected '<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid"></table>' to deeply equal '<table></table>'
+      + expected - actual
+
+      -<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid"></table>
+      +<table></table>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:270:30)
+
+  19) Tests for "Task 1" Removing attributes expect removing an attribute to work (removing one of the attributes):
+
+      AssertionError: expected '<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="the_class"></table>' to deeply equal '<table class="the_class" id="the_id"></table>'
+      + expected - actual
+
+      -<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="the_class"></table>
+      +<table class="the_class" id="the_id"></table>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:280:30)
+
+  20) Tests for "Task 1" Removing attributes expect removing an attribute to work (removing attribute that was added twice):
+
+      AssertionError: expected '<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="word" class="two words" style="something: beautiful"></table>' to deeply equal '<table style="something: beautiful"></table>'
+      + expected - actual
+
+      -<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="word" class="two words" style="something: beautiful"></table>
+      +<table style="something: beautiful"></table>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:290:30)
+
+  21) Tests for "Task 1" Removing attributes expect removing an attribute to work (removing an attribute and then adding it again):
+
+      AssertionError: expected '<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="two words" style="something: beautiful" class="word" class="word"></table>' to deeply equal '<table class="word"></table>'
+      + expected - actual
+
+      -<table data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="cid" id="pid" id="the_id" class="two words" style="something: beautiful" class="word" class="word"></table>
+      +<table class="word"></table>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:299:30)
+
+  22) Tests for "Task 1" Removing attributes expect removing an attribute to work (nested domElements):
+
+      AssertionError: expected '<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="pid" id="the_id" class="two words" style="something: beautiful" class="word" class="word" id="myindex.html" id="myhead"></html>' to deeply equal '<html><head id="myhead"></head></html>'
+      + expected - actual
+
+      -<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="pid" id="the_id" class="two words" style="something: beautiful" class="word" class="word" id="myindex.html" id="myhead"></html>
+      +<html><head id="myhead"></head></html>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:311:32)
+
+  23) Tests for "Task 1" Removing attributes expect removing an attribute to work (nested domElements):
+
+      AssertionError: expected '<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="the_id" class="two words" style="something: beautiful" class="word" class="word" id="myindex.html" id="myhead" id="myindex.html" id="myhead"></html>' to deeply equal '<html id="myindex.html"><head></head></html>'
+      + expected - actual
+
+      -<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" id="the_id" class="two words" style="something: beautiful" class="word" class="word" id="myindex.html" id="myhead" id="myindex.html" id="myhead"></html>
+      +<html id="myindex.html"><head></head></html>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:322:32)
+
+  24) Tests for "Task 1" Removing attributes expect removing an attribute to work (nested domElements):
+
+      AssertionError: expected '<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" class="two words" style="something: beautiful" class="word" class="word" id="myhead" id="myindex.html" id="myhead" id="myindex.html" id="myhead"></html>' to deeply equal '<html><head></head></html>'
+      + expected - actual
+
+      -<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" class="two words" style="something: beautiful" class="word" class="word" id="myhead" id="myindex.html" id="myhead" id="myindex.html" id="myhead"></html>
+      +<html><head></head></html>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:334:32)
+
+  25) Tests for "Task 1" Mixing it all together expect the example test given in the description to work:
+
+      AssertionError: expected '<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" class="two words" style="something: beautiful" class="word" class="word" id="myhead" id="myindex.html" id="myhead" id="myindex.html" id="myhead" charset="utf-8" style="font-size: 42px" id="myid" bgcolor="#012345"></html>' to deeply equal '<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="myid"><div style="font-size: 42px">Hello, world!</div></body></html>'
+      + expected - actual
+
+      -<html data-spam="mnogo spam" rowsomething="has a value" data-id="myid" something="42" xyz="some value" zzz="" abc="other value" adata="do not" bdata="see" adata="me" class="two words" style="something: beautiful" class="word" class="word" id="myhead" id="myindex.html" id="myhead" id="myindex.html" id="myhead" charset="utf-8" style="font-size: 42px" id="myid" bgcolor="#012345"></html>
+      +<html><head><meta charset="utf-8"></meta></head><body bgcolor="#012345" id="myid"><div style="font-size: 42px">Hello, world!</div></body></html>
+      
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:365:30)
+
+  26) Tests for "Task 1" Mixing it all together expect this big test to work (no removeAttribute):
+     Error: Invalid dom element name!
+      at Object.defineProperty.set (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tasks\task-1.js:109:12)
+      at Object.domElement.init (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tasks\task-1.js:69:16)
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:393:7)
+
+  27) Tests for "Task 1" Mixing it all together expect this big test to work:
+     Error: Invalid dom element name!
+      at Object.defineProperty.set (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tasks\task-1.js:109:12)
+      at Object.domElement.init (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tasks\task-1.js:69:16)
+      at Context.<anonymous> (D:\Dropbox\Study\Telerik\Projects\Homework\Telerik-Homeworks\JavaScript-OOP\04.Prototypal-inheritance\homework\tests\tests-task-1.js:472:7)
+
+
+
