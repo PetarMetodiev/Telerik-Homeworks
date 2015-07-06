@@ -272,11 +272,6 @@ function solve() {
 				} else {
 					result += this.children[i].innerHTML;
 				}
-
-				// if (!this.alreadyCovered) {
-				// result += this.children[i].innerHTML;
-				// this.children[i].alreadyCovered = true;
-				// }
 			}
 
 			return result;
