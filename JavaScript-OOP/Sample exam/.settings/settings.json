@@ -1,0 +1,26 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	// Controls visibility of the glyph margin
+	"editor.glyphMargin": true,
+	
+	// Controls if the editor should automatically format the line after typing
+	"editor.formatOnType": true,
+	
+	// Always include all words from the current document.
+	"javascript.suggest.alwaysAllWords": true,
+
+	// Don't spare curly brackets.
+	"javascript.validate.lint.curlyBracketsMustNotBeOmitted": "warning",
+
+	// Use '!==' and '===' instead of '!=' and '=='.
+	"javascript.validate.lint.comparisonOperatorsNotStrict": "warning",
+
+	// Unused local variable.
+	"javascript.validate.lint.unusedVariables": "ignore",
+
+	// Unused local function.
+	"javascript.validate.lint.unusedFunctions": "ignore",
+
+	// Don't use an undeclared variable.
+	"javascript.validate.lint.undeclaredVariables": "error"
+}

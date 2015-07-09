@@ -1,50 +1,4 @@
-/* Task Description */
-/* 
- * Create a module for a Telerik Academy course
- * The course has a title and presentations
- * Each presentation also has a title
- * There is a homework for each presentation
- * There is a set of students listed for the course
- * Each student has firstname, lastname and an ID
- * IDs must be unique integer numbers which are at least 1
- * Each student can submit a homework for each presentation in the course
- * Create method init
- * Accepts a string - course title
- * Accepts an array of strings - presentation titles
- * Throws if there is an invalid title
- * Titles do not start or end with spaces
- * Titles do not have consecutive spaces
- * Titles have at least one character
- * Throws if there are no presentations
- * Create method addStudent which lists a student for the course
- * Accepts a string in the format 'Firstname Lastname'
- * Throws if any of the names are not valid
- * Names start with an upper case letter
- * All other symbols in the name (if any) are lowercase letters
- * Generates a unique student ID and returns it
- * Create method getAllStudents that returns an array of students in the format:
- * {firstname: 'string', lastname: 'string', id: StudentID}
- * Create method submitHomework
- * Accepts studentID and homeworkID
- * homeworkID 1 is for the first presentation
- * homeworkID 2 is for the second one
- * ...
- * Throws if any of the IDs are invalid
- * Create method pushExamResults
- * Accepts an array of items in the format {StudentID: ..., Score: ...}
- * StudentIDs which are not listed get 0 points
- * Throw if there is an invalid StudentID
- * Throw if same StudentID is given more than once ( he tried to cheat (: )
- * Throw if Score is not a number
- * Create method getTopStudents which returns an array of the top 10 performing students
- * Array must be sorted from best to worst
- * If there are less than 10, return them all
- * The final score that is used to calculate the top performing students is done as follows:
- * 75% of the exam result
- * 25% the submitted homework (count of submitted homeworks / count of all homeworks) for the course
- */
-
-function solve() {
+var Course = (function () {
     var Course = {
         init: function (title, presentations) {
             this.title = title;
@@ -217,7 +171,7 @@ function solve() {
             return false;
         }
 
-        if (inputResult.some(function (result) { // checks if a property score exists and if it does then checks if the score is a valid number
+        if (inputResult.some(function (result) {
             return !result.hasOwnProperty('score');
         }) || inputResult.some(function (result) {
             return isNaN(result.score);
@@ -244,7 +198,75 @@ function solve() {
     // validate IDs - unique ID >= 1
 
     return Course;
+} ());
+
+var validTitles = [
+    'Modules and Patterns',
+    'Ofcourse, this is a valid title!',
+    'No errors hIr.',
+    'Moar taitles',
+    'Businessmen arrested for harassment of rockers',
+    'Miners handed cabbages to the delight of children',
+    'Dealer stole Moskvitch',
+    'Shepherds huddle',
+    'Retired Officers rally',
+    'Moulds detonate tunnel',
+    'sailors furious'
+], validNames = [
+        'Pesho',
+        'Notaname',
+        'Johny',
+        'Marulq',
+        'Keremidena',
+        'Samomidena',
+        'Medlar',
+        'Yglomer',
+        'Elegant',
+        'Analogical',
+        'Bolsheviks',
+        'Reddish',
+        'Arbitrage',
+        'Toyed',
+        'Willfully',
+        'Transcribing'
+    ];
+
+function getValidTitle() {
+    return validTitles[(Math.random() * validTitles.length) | 0];
 }
 
+function getValidName() {
+    return validNames[(Math.random() * validNames.length) | 0];
+}
 
-module.exports = solve;
+function checkStudentList(list1, list2) {
+    if (list1.length !== list2.length)
+        return false;
+
+    function compare(a, b) {
+        return a.id - b.id;
+    }
+
+    list1.sort(compare);
+    list2.sort(compare);
+
+    for (var i in list1) {
+        if (list1[i].id !== list2[i].id)
+            return false;
+        if (list1[i].firstname !== list2[i].firstname)
+            return false;
+        if (list1[i].lastname !== list2[i].lastname)
+            return false;
+    }
+    return true;
+}
+
+// TESTS //
+
+var jsoop = Object.create(Course)
+    .init(getValidTitle(), [getValidTitle()]);
+jsoop.addStudent(getValidName() + ' ' + getValidName());
+jsoop.addStudent(getValidName() + ' ' + getValidName());
+
+
+jsoop.pushExamResults([{ StudentID: 1, score: 'asd' }, { StudentID: 2, score: 4 }]);
